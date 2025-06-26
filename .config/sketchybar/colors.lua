@@ -1,28 +1,30 @@
 return {
-  black = 0xff181819,
-  white = 0xffe2e2e3,
-  red = 0xfffc5d7c,
-  green = 0xff9ed072,
-  blue = 0xff76cce0,
-  yellow = 0xffe7c664,
-  orange = 0xfff39660,
-  magenta = 0xffb39df3,
-  grey = 0xff7f8490,
-  transparent = 0x00000000,
+	black = 0xff1e1e2e, -- base
+	white = 0xffcdd6f4, -- text
+	red = 0xfff38ba8, -- red
+	green = 0xffa6e3a1, -- green
+	blue = 0xff89b4fa, -- blue
+	yellow = 0xfff9e2af, -- yellow
+	orange = 0xfffab387, -- peach
+	magenta = 0xffcba6f7, -- mauve
+	grey = 0xff7f849c, -- surface1
+	transparent = 0x00000000,
 
-  bar = {
-    bg = 0xf02c2e34,
-    border = 0xff2c2e34,
-  },
-  popup = {
-    bg = 0xc02c2e34,
-    border = 0xff7f8490
-  },
-  bg1 = 0xff363944,
-  bg2 = 0xff414550,
+	bar = {
+		bg = 0xf01e1e2e, -- base with alpha
+		border = 0xff1e1e2e, -- base
+	},
+	popup = {
+		bg = 0xc01e1e2e, -- base with more transparency
+		border = 0xff7f849c, -- surface1
+	},
+	bg1 = 0xff313244, -- mantle
+	bg2 = 0xff45475a, -- surface0
 
-  with_alpha = function(color, alpha)
-    if alpha > 1.0 or alpha < 0.0 then return color end
-    return (color & 0x00ffffff) | (math.floor(alpha * 255.0) << 24)
-  end,
+	with_alpha = function(color, alpha)
+		if alpha > 1.0 or alpha < 0.0 then
+			return color
+		end
+		return (color & 0x00ffffff) | (math.floor(alpha * 255.0) << 24)
+	end,
 }

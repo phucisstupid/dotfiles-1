@@ -178,7 +178,7 @@ sbar.exec(query_all_workspaces, function(data)
 
 	-- Events
 	root:subscribe("aerospace_focus_change", updateWindows)
-	root:subscribe("display_change", function()
+ root:subscribe("space_windows_change", function()
 		updateWorkspaceMonitor()
 		updateWindows()
 	end)
